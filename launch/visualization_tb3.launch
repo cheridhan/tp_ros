@@ -1,6 +1,0 @@
-<launch>
-
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find turtlebot3_fake)/rviz/turtlebot3_fake.rviz"/>
-
-
-</launch>

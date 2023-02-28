@@ -1,0 +1,23 @@
+<launch>
+
+    <!-- set the model of the tb3 to use -->
+    <arg name="model" default="burger" doc="model type [burger, waffle, waffle_pi]" />
+    <!-- <param name="tb3_model" value="$(arg model)" /> -->
+
+    <!-- initial position of the robot -->
+    <arg name="x_pos" default="0.0" />
+    <arg name="y_pos" default="0.0" />
+    <arg name="z_pos" default="0.0" />
+
+    <!-- load the description of the turtlebot -->
+    <include file="$(find tp_ros)/launch/load_tb3_description.launch">
+        <args name="model" value="$(arg model)"/>
+    </include>
+    
+    <!-- spawn the turtlebot into gazebo world -->
+    <node pkg="gazebo_ros" type="spawn_model" name="tb3"
+        args="-urdf -model turtlebot3_$(arg model) 
+              -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) 
+              -param robot_description" />
+
+</launch>

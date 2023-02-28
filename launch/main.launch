@@ -1,0 +1,22 @@
+<launch>
+
+    <!-- launch empty gazebo world -->
+    <include file="$(find tp_ros)/launch/empty_gazebo_world.launch"></include>
+
+
+    <!-- spawn turtlebot burger into gazebo empty world -->
+    <include file="$(find tp_ros)/launch/spawn_tb3_burger.launch"></include>
+
+
+    <!-- publish the transformation between each joint of the robot -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"
+        output="screen">
+        <param name="publish_frequency" type="double" value="50.0" />
+    </node>
+
+    <!-- launch rviz to visualize the turtlebot -->
+    <node name="rviz" pkg="rviz" type="rviz" 
+          args="-d $(find tp_ros)/rviz/turtlebot3_world.rviz" />
+
+
+</launch>

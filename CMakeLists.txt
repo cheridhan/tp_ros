@@ -173,6 +173,8 @@ catkin_install_python(PROGRAMS
     scripts/action/fibonacci_server.py
     scripts/action/fibonacci_client.py
 
+    nodes/goal_listener.py
+
     DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

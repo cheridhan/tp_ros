@@ -52,22 +52,19 @@ find_package(catkin REQUIRED COMPONENTS
 # #   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 # # Generate messages in the 'msg' folder
-add_message_files(
-    FILES
-    Num.msg
-)
+# add_message_files(
+#     FILES
+# )
 
 # # Generate services in the 'srv' folder
-add_service_files(
-    FILES
-    AddTwoInts.srv
-)
+# add_service_files(
+#     FILES
+# )
 
 # # Generate actions in the 'action' folder
-add_action_files(
-    FILES
-    Fibonnacci.action
-)
+# add_action_files(
+#     FILES
+# )
 
 # # Generate added messages and services with any dependencies listed here
 generate_messages(

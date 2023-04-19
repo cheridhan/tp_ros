@@ -13,7 +13,7 @@ import tp_ros.msg
 
 def fibonacci_client():
     # creates the SimpleActionClient, passing the type of the action
-    client=actionlib.SimpleActionClient('fibonacci', tp_ros.msg.FibonnacciAction)
+    client = actionlib.SimpleActionClient('', tp_ros.msg.FibonnacciAction)
 
 
     # waits until the action server has started up and started
@@ -21,7 +21,7 @@ def fibonacci_client():
     client.wait_for_server()
 
     # creates a goal to send to the action server
-    goal=tp_ros.msg.FibonnacciGoal(order=4)
+    goal = tp_ros.msg.FibonnacciGoal(order=4)
 
 
 
@@ -30,7 +30,6 @@ def fibonacci_client():
 
     # waits for the server to finish performing the action
     client.wait_for_result()
-
 
     # prints out the result of executing the action
     return client.get_result()
@@ -44,7 +43,10 @@ if __name__=='__main__':
         # publish and subscribe over ROS
 
         rospy.init_node('fibonacci_client')
+
         result=fibonacci_client()
+
         print('Result:', ','.join([str(n) for n in result.sequence]))
+
     except rospy.ROSInterruptException:
         print(' program interrupted before completion', file=sys.stderr)

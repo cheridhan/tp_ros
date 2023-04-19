@@ -7,12 +7,16 @@ import tp_ros.msg
 
 class FibonacciAction(object):
     #create messages that are used to publish
-    _feedback=tp_ros.msg.FibonnacciFeedback()
-    _result=tp_ros.msg.FibonnacciResult()
+    _feedback = tp_ros.msg.FibonnacciFeedback()
+    _result = tp_ros.msg.FibonnacciResult()
 
     def __init__(self, name):
         self._action_name=name
-        self._as=actionlib.SimpleActionServer(self._action_name, tp_ros.msg.FibonnacciAction,execute_cb=self.execute_cb,auto_start=False)
+        self._as=actionlib.SimpleActionServer(
+            self._action_name, 
+            tp_ros.msg.FibonnacciAction,
+            execute_cb=self.execute_cb,
+            auto_start=False)
         self._as.start()
 
     def execute_cb(self,goal):
@@ -36,7 +40,9 @@ class FibonacciAction(object):
                 self._as.set_preempted()
                 success=False
                 break
-            self._feedback.partial_sequence.append(self._feedback.partial_sequence[i]+self._feedback.partial_sequence[i-1])
+
+            self._feedback.partial_sequence.append(
+                self._feedback.partial_sequence[i] + self._feedback.partial_sequence[i-1])
 
 
             # publish the feedback
@@ -45,13 +51,14 @@ class FibonacciAction(object):
             r.sleep()
 
         if success:
-            self._result.sequence=self._feedback.partial_sequence
+            self._result.sequence = self._feedback.partial_sequence
             rospy.loginfo('%s: Succeeded'% self._action_name)
             self._as.set_succeeded(self._result)
 
 
 if __name__=='__main__':
-    rospy.init_node('fibonacci_node')
-    server= FibonacciAction(rospy.get_name())
+    rospy.init_node('fibonacci_server')
+    print(rospy.get_name())
+    server= FibonacciAction('')
     rospy.spin()
 

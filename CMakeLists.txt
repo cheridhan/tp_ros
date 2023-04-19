@@ -168,8 +168,11 @@ include_directories(
 catkin_install_python(PROGRAMS
     scripts/topic/talker.py
     scripts/topic/listener.py
+
     scripts/service/add_two_ints_server.py
     scripts/service/add_two_ints_client.py
+
+    
     scripts/action/fibonacci_server.py
     scripts/action/fibonacci_client.py
 

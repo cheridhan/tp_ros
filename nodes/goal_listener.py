@@ -25,7 +25,7 @@ def callback(goal):
 
     waypoints.append(goal)
 
-    if len(waypoints) == 2:
+    if len(waypoints) == 3:
         continue_ = True
         while continue_ and len(waypoints) > 0:
             continue_ = move_base_(waypoints.pop(0))

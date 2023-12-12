@@ -1,5 +1,8 @@
 <launch>
 
+
+
+
     <!-- set the model of the tb3 to use -->
     <arg name="model" default="burger" doc="model type [burger, waffle, waffle_pi]" />
     <!-- <param name="tb3_model" value="$(arg model)" /> -->

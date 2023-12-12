@@ -5,10 +5,10 @@
   <arg name="z_pos" default="0.0"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find tp_ros)/worlds/tp_ros.world"/>
+    <arg name="world_name" value="$(find tp_ros)/worlds/tp_ros_2023.world"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
-    <arg name="gui" value="true"/>
+    <arg name="gui" value="true"/> 
     <arg name="headless" value="false"/>
     <arg name="debug" value="false"/>
   </include>

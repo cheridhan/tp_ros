@@ -1,4 +1,4 @@
-image: /home/user/catkin_ws/src/tp_ros/maps/map_2023/map_2023.pgm
+image: /home/user/catkin_ws/src/tp_ros/maps/map_2023/map_2023.pgm 
 resolution: 0.050000
 origin: [-10.000000, -10.000000, 0.000000]
 negate: 0

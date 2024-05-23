@@ -37,6 +37,7 @@ def fibonacci_client():
 def feedback(data):
     print(data)
 
+
 if __name__=='__main__':
     try:
         # initializes a rospy node so that the SimpleActionClient can

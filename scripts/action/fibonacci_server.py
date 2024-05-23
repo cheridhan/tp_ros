@@ -57,6 +57,7 @@ class FibonacciAction(object):
 
 
 if __name__=='__main__':
+    
     rospy.init_node('fibonacci_server')
     print(rospy.get_name())
     server= FibonacciAction('')

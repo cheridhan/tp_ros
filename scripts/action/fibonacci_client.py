@@ -24,7 +24,6 @@ def fibonacci_client():
     goal = tp_ros.msg.FibonnacciGoal(order=4)
 
 
-
     # Sends the goal to the action server
     client.send_goal(goal,feedback_cb=feedback)
 

@@ -8,7 +8,7 @@ from std_msgs.msg import String
 
 def callback(data):
 
-    rospy.loginfo(data.data)
+    rospy.loginfo("Nice to meet you " + data.data)
 
 
 def listener():

@@ -3,7 +3,6 @@
 from __future__ import print_function
 
 import rospy
-import rospy
 
 from tp_ros.srv import *
 

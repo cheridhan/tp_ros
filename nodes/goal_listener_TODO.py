@@ -7,18 +7,35 @@ from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
 
 client = actionlib.SimpleActionClient('move_base', MoveBaseAction)
 
+waypoints = [] # array to accumulate the 3 waypoints
 
-def callback(goal):
-
-    ## Write your code here 
-
-    ### .....
-    pass
+def listener():
+    rospy.init_node('goal_listener')
+    rospy.Subscriber('ko/move_base_simple/goal', PoseStamped, waypointRvizClbk)
 
 
 
-def move_base_to(goal_):
-    # client = actionlib.SimpleActionClient('move_base', MoveBaseAction)
+# This function is called each time a new goal is set in the Rviz interface.
+def waypointRvizClbk(goal): 
+
+    ## TO DO
+    ## Complete the following code
+
+    waypoints.append(goal)
+
+    ...
+
+    continue_ = move_base_(waypoints.pop(0))
+
+
+    ...
+
+
+ 
+
+# This function is responsible of moving the robot from point A to point B.
+# It returns True if the robot successfully reach point B and False otherwise.
+def move_base_(goal_):
 
     client.wait_for_server()
 
@@ -36,14 +53,7 @@ def move_base_to(goal_):
     
     return True if client.get_goal_status_text() == 'Goal reached.' else False
 
-    # return client.get_result()
-
-
-def listener():
-    rospy.init_node('goal_listener')
-    rospy.Subscriber('ko/move_base_simple/goal', PoseStamped, callback)
-
-
+   
 if __name__ == '__main__':
 
     listener()

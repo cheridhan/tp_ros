@@ -18,7 +18,7 @@ sudo apt-get install ros-noetic-turtlebot3-simulations -y
 
 # Setting up TURTLEBOT3_MODEL environment variable
 sudo echo "export TURTLEBOT3_MODEL=burger">>.bashrc
-source ~/.bashrc
+source .bashrc
 
 # Installing map server
 echo "Installing Map Server"
@@ -33,5 +33,6 @@ sudo apt-get install ros-noetic-turtlebot3-teleop -y
 
 cd ~/catkin_ws
 catkin_make
+
 
 echo "Installation and Setup complete successfully"

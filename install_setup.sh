@@ -17,9 +17,9 @@ sudo apt-get install ros-noetic-map-server -y
 
 git clone -b noetic https://github.com/ROBOTIS-GIT/turtlebot3.git catkin_ws/src/turtlebot3
 
-git clone -b noetic https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
+git clone -b noetic https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git catkin_ws/src/turtlebot3_msg
 
-git clone -b noetic https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+git clone -b noetic https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git catkin_ws/src/turtlebot3_simulations
 
 cd ~/catkin_ws
 catkin_make
